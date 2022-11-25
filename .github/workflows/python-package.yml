@@ -1,0 +1,27 @@
+#cron schedule
+
+name: Python package
+
+on:
+  schedule:
+    - cron: "* */12 * *"
+env:
+  ACTIONS_ALLOW_UNSECURE_COMMANDS: true
+
+jobs:
+  scrape-latest:
+    runs-on: windows-latest
+  
+    steps:
+    - name: Checkout repo
+    - uses: actions/checkout@v2
+    - name: Set up Python
+      uses: actions/setup-python@v2.0.0
+      with:
+        python-version: "3.7"
+    - name: Install dependencies
+      run: pip install -r requirements.txt
+    
+    - name: run campaign_tweets
+      run: Peter_Obi_tweets.py
+        
