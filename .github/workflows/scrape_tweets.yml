@@ -4,7 +4,7 @@ name: scrape_tweets
 
 on:
   schedule:
-    - cron: "* */12 * *"
+    - cron: "* */12 * * *"
 env:
   ACTIONS_ALLOW_UNSECURE_COMMANDS: true
 
