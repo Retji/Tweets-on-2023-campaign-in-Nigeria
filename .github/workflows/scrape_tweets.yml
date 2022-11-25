@@ -1,6 +1,6 @@
 #cron schedule
 
-name: Python package
+name: scrape_tweets
 
 on:
   schedule:
