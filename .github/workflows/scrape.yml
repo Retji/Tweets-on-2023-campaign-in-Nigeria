@@ -28,7 +28,7 @@ jobs:
           - name: execute py script # run the run.py to get the latest data
             run: |
               python Peter_Obi_tweets.py
-          - name: Commit and push if it changed
+          - name: Commit and push if it change
             run: |
               git config user.name actions-user
               git config user.email "actions@github.com"
