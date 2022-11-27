@@ -20,8 +20,10 @@ jobs:
       with:
         python-version: "3.7"
     - name: Install dependencies
-      run: pip install -r requirements.txt
+      run:|
+            pip install -r requirements.txt
     
     - name: run campaign_tweets
-      run: Peter_Obi_tweets.py
+      run: |
+            Peter_Obi_tweets.py
         
