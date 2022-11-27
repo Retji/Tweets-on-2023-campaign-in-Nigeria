@@ -9,7 +9,7 @@ env:
   ACTIONS_ALLOW_UNSECURE_COMMANDS: true
 
 jobs:
-  scrape-latest:
+  build:
     runs-on: windows-latest
   
     steps:
@@ -20,9 +20,15 @@ jobs:
       with:
         python-version: "3.7"
     - name: Install dependencies
-      run:  pip install python
+      run: |
+            pip  snscrabe
+            pip install python
             pip install -r requirements.txt
     
     - name: run campaign_tweets
-      run:  Peter_Obi_tweets.py
+      env:
+        CONSUMER_KEY: ${{secrets.CONSUMER_KEY}}
+        CONSUMER_SECRETS: $${{secrets.CONSUMER_SECRETS}}
+      run: |
+            Peter_Obi_tweets.py
         
