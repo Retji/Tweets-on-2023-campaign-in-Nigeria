@@ -5,7 +5,7 @@ name: scrape_tweets
 # Controls when the workflow will run
 on:
   schedule:
-        - cron: '0 * * * *' #runs every hour
+        - cron: '* */12 * * *' #runs every 12 hour
 
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
@@ -17,10 +17,7 @@ jobs:
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
           - name: checkout repo content
-            uses: actions/checkout@master # checkout the repository content to github runner.
-            
-          - name: Checkout repo
-            uses: actions/checkout@v3
+            uses: actions/checkout@v3 # checkout the repository content to github runner.
             
           - name: set up python
             uses: actions/setup-python@v4
@@ -31,6 +28,7 @@ jobs:
               pip install snscrape
               pip install pandas
               pip install python-csv
+              
           - name: execute script
             run: |
               python Peter_Obi_tweets.py
