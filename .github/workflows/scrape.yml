@@ -12,7 +12,7 @@ jobs:
   # This workflow contains a single job called "build"
   build:
     # The type of runner that the job will run on
-    runs-on: ubuntu-latest
+    runs-on: windows-latest
 
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
@@ -23,6 +23,7 @@ jobs:
             uses: actions/setup-python@v2
             with:
               python-version: 3.8
+              update-environment: false
               cache: 'pip'
          
           - name: Install dependencies
