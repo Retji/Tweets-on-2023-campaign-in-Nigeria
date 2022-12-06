@@ -1,0 +1,4 @@
+pandas==1.3.5
+snscrape==0.4.3.20220106
+python-csv==0.013
+python-datetime2==0.1.1
