@@ -38,8 +38,7 @@ jobs:
               git config user.name actions-user
               git config user.email "actions@github.com"
               git add -A
-              timestamp=$(date -u)
-              git commit -m "Scrapped: ${timestamp} (auto)" 
+              git commit -m "Scrapped" 
               git push origin main
             env: 
               REPO_KEY: ${{secrets.GITHUB_TOKEN}}
