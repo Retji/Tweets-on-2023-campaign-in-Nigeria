@@ -38,8 +38,13 @@ jobs:
               git config --local user.name actions-user
               git config --local user.email "actions@github.com"
               git add -A
-              git commit -m "Scrapped" 
+              git commit -m "Today Scrapped" || exit 0
               git push origin main
             env: 
               REPO_KEY: ${{secrets.GITHUB_TOKEN}}
               username: github-actions
+          - name: Push changes # push the output folder to your repo, turn on workflow read and write permission
+            uses: ad-m/github-push-action@main
+            with:
+              github_token: ${{ secrets.GITHUB_TOKEN }}
+              force: true
